@@ -1,0 +1,19 @@
+#! /bin/sh
+
+#VALUES
+bold=`tput bold`
+normal=`tput sgr0`
+
+#CODE
+date;
+echo -e "${bold}Simple SSH Connector${normal} v1.2.0724\n";
+read -p "Enter your host : " host;
+read -p "Enter your SSH port : " port;
+read -p "Enter your username : " name;
+echo -e "Welcome back ${name} ! \n";
+ssh -2 -p ${port} ${name}@${host} -t "clear;echo -e "Welcome, $USER";bash";
+echo -e "\033c";
+echo -e "Bye, ${name} ! \n";
+#EOC
+
+#EOF
